@@ -44,15 +44,17 @@ export default function LenderPage() {
   if (loading) return <p className="text-center mt-10">Loading loan requests...</p>;
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-4">
-      <h1 className="text-2xl font-semibold mb-6 text-gray-800">Available Loan Requests</h1>
-      <LoanFilter
-        loans={loans}
-        userId={userId}
-        interestedLoanIds={interestedLoanIds}
-        setInterestedLoanIds={setInterestedLoanIds}
-        setLoans={setLoans}
-      />
+    <div className="bg-[#ECECD9] min-h-[80vh]">
+      <div className="max-w-4xl mx-auto py-10 px-4">
+        <h1 className="text-2xl font-semibold mb-6 text-gray-800">Available Loan Requests</h1>
+        <LoanFilter
+          loans={loans}
+          userId={userId}
+          interestedLoanIds={interestedLoanIds}
+          setInterestedLoanIds={setInterestedLoanIds}
+          setLoans={setLoans}
+        />
+      </div>
     </div>
   );
 }
