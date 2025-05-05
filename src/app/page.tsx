@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-[70vh] flex items-center justify-center">
+    <div className="bg-[#ECECD9] min-h-[80vh] flex items-center justify-center">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl w-full p-4">
         {/* Borrower Box */}
         <Link

@@ -9,7 +9,7 @@ import { Loan } from '@/types/loan';
     return (
       <div
         key={loan.id}
-        className="p-6 rounded-2xl shadow-md hover:shadow-lg bg-white border border-gray-200"
+        className="p-6 rounded-2xl shadow-md hover:shadow-lg border border-green-100 bg-green-50"
       >
         {/* Top row: Amount and button */}
         <div className="flex items-center justify-between mb-4">

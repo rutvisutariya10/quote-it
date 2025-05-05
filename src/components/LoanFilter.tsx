@@ -35,7 +35,12 @@ export default function LoanFilter({
 
   const filterLoans = () => {
     return loans.filter((loan) => {
-      const matchesDuration = duration ? loan.duration === duration : true;
+      const roundUpToSix = (num: number) => Math.ceil(num / 6) * 6;
+
+      const matchesDuration = duration
+        ? roundUpToSix(loan.duration) === duration
+        : true;
+
 
       const matchesCreditScore =
         creditScoreRange === "all"
@@ -92,7 +97,7 @@ export default function LoanFilter({
             <div className="flex gap-2">
               <input
                 type="number"
-                className="flex-1 w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                className="flex-1 w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
                 placeholder="Min"
                 value={amountMin || ""}
                 onChange={(e) =>
@@ -101,7 +106,7 @@ export default function LoanFilter({
               />
               <input
                 type="number"
-                className="flex-1 w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                className="flex-1 w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
                 placeholder="Max"
                 value={amountMax || ""}
                 onChange={(e) =>
@@ -114,17 +119,17 @@ export default function LoanFilter({
           {/* Sort */}
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-700">
-              Sort by Interest Count
+              Sort by Popularity
             </label>
             <select
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
               value={interestSort}
               onChange={(e) =>
                 setInterestSort(e.target.value as "high-to-low" | "low-to-high")
               }
             >
-              <option value="high-to-low">High to Low</option>
-              <option value="low-to-high">Low to High</option>
+              <option value="high-to-low">Most Popular</option>
+              <option value="low-to-high">Least Popular</option>
             </select>
           </div>
         </div>
@@ -139,7 +144,7 @@ export default function LoanFilter({
               Duration
             </label>
             <select
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
               value={duration || ""}
               onChange={(e) =>
                 setDuration(e.target.value ? parseInt(e.target.value) : null)
@@ -159,7 +164,7 @@ export default function LoanFilter({
               Credit Score Range
             </label>
             <select
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
               value={creditScoreRange}
               onChange={(e) =>
                 setCreditScoreRange(e.target.value as CreditScoreRange)
@@ -178,7 +183,7 @@ export default function LoanFilter({
               Your Interest Status
             </label>
             <select
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
               value={interestStatus}
               onChange={(e) =>
                 setInterestStatus(e.target.value as InterestStatus)

@@ -13,7 +13,7 @@ export default function AuthPage() {
     e.preventDefault();
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) {
-      alert(error.message);
+      alert("Invalid Credentials. Try Signing-Up!");
     } else {
       router.push('/');
     }
@@ -33,9 +33,9 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-[80vh] bg-[#ECECD9]">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96">
-        <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">Welcome Back!</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">Welcome!</h2>
 
         <form className="space-y-4" onSubmit={handleLogin}>
           <div>
@@ -47,7 +47,7 @@ export default function AuthPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#173054]"
             />
           </div>
 
@@ -60,13 +60,13 @@ export default function AuthPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#173054]"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition duration-300"
+            className="w-full py-2 px-4 hover:bg-[#fae5eb] text-white font-semibold rounded-md bg-[#D496A7] hover:text-[#D496A7] transition duration-300"
           >
             Log In
           </button>
@@ -75,7 +75,7 @@ export default function AuthPage() {
         <div className="text-center mt-4">
           <button
             onClick={handleSignup}
-            className="text-blue-600 hover:text-blue-700 font-semibold"
+            className="text-[#173054] hover:text-blue-700 font-semibold"
           >
             Dont have an account? Sign Up
           </button>
