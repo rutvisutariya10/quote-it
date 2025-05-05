@@ -8,6 +8,7 @@ import { Loan } from "@/types/loan";
 type Props = {
   loans: Loan[];
   userId: string | null;
+  userEmail: string | null;
   interestedLoanIds: number[];
   setInterestedLoanIds: React.Dispatch<React.SetStateAction<number[]>>;
   setLoans: React.Dispatch<React.SetStateAction<Loan[]>>;
@@ -19,6 +20,7 @@ type InterestStatus = "all" | "expressed" | "not-expressed";
 export default function LoanFilter({
   loans,
   userId,
+  userEmail,
   interestedLoanIds,
   setInterestedLoanIds,
   setLoans,
@@ -213,6 +215,7 @@ export default function LoanFilter({
                   loanId={loan.id}
                   hasExpressedInterest={hasExpressedInterest}
                   userId={userId}
+                  userEmail={userEmail}
                   setInterestedLoanIds={setInterestedLoanIds}
                   setLoans={setLoans}
                 />

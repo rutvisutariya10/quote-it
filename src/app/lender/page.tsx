@@ -12,6 +12,8 @@ export default function LenderPage() {
   const [interestedLoanIds, setInterestedLoanIds] = useState<number[]>([]);
   const [loading, setLoading] = useState(true);
   const [userId, setUserId] = useState<string | null>(null);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -23,7 +25,9 @@ export default function LenderPage() {
       }
 
       const currentUserId = userData.user.id;
+      const currentUserEmail = userData.user.email || "";
       setUserId(currentUserId);
+      setUserEmail(currentUserEmail);
 
       const fetchedLoans = await getLoansLender(currentUserId);
       setLoans(fetchedLoans);
@@ -50,6 +54,7 @@ export default function LenderPage() {
         <LoanFilter
           loans={loans}
           userId={userId}
+          userEmail={userEmail}
           interestedLoanIds={interestedLoanIds}
           setInterestedLoanIds={setInterestedLoanIds}
           setLoans={setLoans}

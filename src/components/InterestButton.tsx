@@ -5,6 +5,7 @@ type InterestButtonProps = {
   loanId: number;
   hasExpressedInterest: boolean;
   userId: string | null;
+  userEmail: string | null;
   setInterestedLoanIds: React.Dispatch<React.SetStateAction<number[]>>;
   setLoans: React.Dispatch<React.SetStateAction<Loan[]>>; // Use proper type for setLoans
 };
@@ -13,6 +14,7 @@ const InterestButton = ({
   loanId,
   hasExpressedInterest,
   userId,
+  userEmail,
   setInterestedLoanIds,
   setLoans,
 }: InterestButtonProps) => {
@@ -22,7 +24,7 @@ const InterestButton = ({
     try {
       const { error: insertError } = await supabase
         .from('interests')
-        .insert([{ loan_id: loanId, user_id: userId }]);
+        .insert([{ loan_id: loanId, user_id: userId, user_email: userEmail }]);
 
       if (insertError) throw insertError;
 
