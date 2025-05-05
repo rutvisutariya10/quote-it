@@ -2,12 +2,17 @@
 
 import { useState } from 'react';
 import { createLoan } from '../lib/loan';
+import { Loan } from '@/types/loan';
 
-export default function BorrowerForm({ onLoanCreated }) {
-  const [amount, setAmount] = useState('');
-  const [purpose, setPurpose] = useState('');
-  const [duration, setDuration] = useState('');
-  const [creditScore, setCreditScore] = useState('');
+type BorrowerFormProps = {
+  onLoanCreated?: (loan: Loan) => void;
+};
+
+export default function BorrowerForm({ onLoanCreated }: BorrowerFormProps) {
+  const [amount, setAmount] = useState<string>('');
+  const [purpose, setPurpose] = useState<string>('');
+  const [duration, setDuration] = useState<string>('');
+  const [creditScore, setCreditScore] = useState<string>('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,8 +31,9 @@ export default function BorrowerForm({ onLoanCreated }) {
       setPurpose('');
       setDuration('');
       setCreditScore('');
-    } catch (error: any) {
-      alert('Error creating loan: ' + error.message);
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      alert('Error creating loan: ' + errorMessage);
     }
   };
 
