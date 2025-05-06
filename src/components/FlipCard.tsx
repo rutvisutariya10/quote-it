@@ -9,9 +9,9 @@ type FlipCardProps = {
   loan: Loan;
 };
 
-export default function FlipCard({ loan }: FlipCardProps ) {
+export default function FlipCard({ loan }: FlipCardProps) {
   const [flipped, setFlipped] = useState(false);
-  const [emails,setEmails] = useState<string[] | null>(null);
+  const [emails, setEmails] = useState<string[] | null>(null);
 
   useEffect(() => {
     const getInterestedEmails = async () => {
@@ -26,23 +26,15 @@ export default function FlipCard({ loan }: FlipCardProps ) {
       }
 
       const userEmails = data.map((entry) => entry.user_email);
-
-      if (userEmails.length === 0) {
-        setEmails([]);
-        return;
-      }
-
-      setEmails(userEmails);
+      setEmails(userEmails.length > 0 ? userEmails : []);
     };
 
     getInterestedEmails();
   }, [loan.id]);
 
-
-
   return (
     <div
-      className="relative w-full h-full cursor-pointer perspective"
+      className="relative w-full h-32 cursor-pointer"
       onClick={() => setFlipped(!flipped)}
     >
       <div
@@ -51,37 +43,36 @@ export default function FlipCard({ loan }: FlipCardProps ) {
         }`}
       >
         {/* Front */}
-        <div className="absolute w-full h-full backface-hidden">
-            <BorrowerCard key={loan.id} loan={loan} />
+        <div className="absolute inset-0 backface-hidden">
+          <BorrowerCard loan={loan} />
         </div>
 
         {/* Back */}
-        <div className="absolute w-full h-full backface-hidden rotate-y-180 ">
-        {emails && emails.length > 0 ? (
-        <div className="p-4 bg-gray-100 rounded-md text-gray-700 shadow-sm">
-            <p className="font-semibold mb-2">
-            Number of Lenders that have shown interest: {emails.length}
-            </p>
-            <p className="font-medium mb-1">Here are their emails:</p>
-            <ul className="list-disc list-inside text-sm">
+        <div className="absolute inset-0 backface-hidden rotate-y-180 bg-gray-100 p-4 rounded-md shadow-sm overflow-y-auto">
+          {emails && emails.length > 0 ? (
+            <>
+              <p className="font-semibold mb-2">
+                Number of Lenders that have shown interest: {emails.length}
+              </p>
+              <p className="font-medium mb-1">Here are their emails:</p>
+              <ul className="list-disc list-inside text-sm">
                 {emails.map((email, index) => {
-                    const [local, domain] = email.split('@');
-                    const maskedLocal = local.length > 3 
-                    ? local.slice(0, 3) + '*'.repeat(local.length - 3)
-                    : '*'.repeat(local.length);
-                    return (
+                  const [local, domain] = email.split('@');
+                  const maskedLocal =
+                    local.length > 3
+                      ? local.slice(0, 3) + '*'.repeat(local.length - 3)
+                      : '*'.repeat(local.length);
+                  return (
                     <li key={index}>{`${maskedLocal}@${domain}`}</li>
-                    );
+                  );
                 })}
-                </ul>
-
-        </div>
-        ) : (
-        <div className="p-4 py-10 text-gray-700 bg-gray-100 rounded-md shadow-sm">
-            No lenders have shown interest yet.
-        </div>
-        )}
-
+              </ul>
+            </>
+          ) : (
+            <div className="py-4 text-gray-700">
+              No lenders have shown interest yet.
+            </div>
+          )}
         </div>
       </div>
     </div>

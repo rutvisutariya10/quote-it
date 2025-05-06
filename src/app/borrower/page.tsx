@@ -38,6 +38,7 @@ export default function BorrowerPage() {
 
       try {
         const data = await getLoansBorrower(user.id);
+        console.log(data)
         setLoans(data);
       } catch (error) {
         console.error("Error fetching loans:", error);
