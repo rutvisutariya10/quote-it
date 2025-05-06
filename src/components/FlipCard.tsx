@@ -59,7 +59,7 @@ export default function FlipCard({ loan }: FlipCardProps ) {
         <div className="absolute w-full h-full backface-hidden rotate-y-180 ">
         {emails && emails.length > 0 ? (
         <div className="p-4 bg-gray-100 rounded-md shadow-sm">
-            <p className="font-semibold mb-2">
+            <p className="font-semibold mb-2 text-gray-700">
             Number of Lenders that have shown interest: {emails.length}
             </p>
             <p className="font-medium mb-1">Here are their emails:</p>
