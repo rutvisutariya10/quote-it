@@ -19,7 +19,7 @@ export default function Home() {
           href="/lender"
           className="block p-6 rounded-2xl shadow hover:shadow-lg bg-white border border-gray-200 text-center hover:bg-green-50 transition"
         >
-          <h2 className="text-xl font-bold text-green-700 mb-2">I am a Lender</h2>
+          <h2 className="text-xl font-bold text-green-600 mb-2">I am a Lender</h2>
           <p className="text-gray-600">Browse and filter loan requests to express interest.</p>
         </Link>
       </div>

@@ -68,7 +68,7 @@ export default function BorrowerPage() {
           <div className="text-center ml-auto">
             <button
               onClick={() => setShowForm(true)}
-              className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-white hover:text-blue-500 ring hover:ring-blue-600 transition"
+              className="w-full py-2 px-4 bg-blue-400 text-white font-semibold rounded-md hover:bg-white hover:text-blue-500 ring hover:ring-blue-500 transition"
             >
               New Request
             </button>

@@ -58,12 +58,12 @@ export default function FlipCard({ loan }: FlipCardProps ) {
         {/* Back */}
         <div className="absolute w-full h-full backface-hidden rotate-y-180 ">
         {emails && emails.length > 0 ? (
-        <div className="p-4 bg-gray-100 rounded-md shadow-sm">
-            <p className="font-semibold mb-2 text-gray-700">
+        <div className="p-4 bg-gray-100 rounded-md text-gray-700 shadow-sm">
+            <p className="font-semibold mb-2">
             Number of Lenders that have shown interest: {emails.length}
             </p>
             <p className="font-medium mb-1">Here are their emails:</p>
-            <ul className="list-disc list-inside text-sm text-gray-700">
+            <ul className="list-disc list-inside text-sm">
                 {emails.map((email, index) => {
                     const [local, domain] = email.split('@');
                     const maskedLocal = local.length > 3 
@@ -77,7 +77,7 @@ export default function FlipCard({ loan }: FlipCardProps ) {
 
         </div>
         ) : (
-        <div className="p-4 bg-yellow-50 rounded-md text-yellow-700">
+        <div className="p-4 py-10 text-gray-700 bg-gray-100 rounded-md shadow-sm">
             No lenders have shown interest yet.
         </div>
         )}

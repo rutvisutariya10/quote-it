@@ -52,7 +52,7 @@ export default function BorrowerForm({ onLoanCreated }: BorrowerFormProps) {
         onChange={(e) => setAmount(e.target.value)}
         placeholder="Loan Amount"
         required
-        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-200 focus:bg-blue-50"
+        className="w-full px-4 py-2 text-gray-800 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-200 focus:bg-blue-50"
       />
 
       <input
@@ -61,7 +61,7 @@ export default function BorrowerForm({ onLoanCreated }: BorrowerFormProps) {
         onChange={(e) => setDuration(e.target.value)}
         placeholder="Duration (months)"
         required
-        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-200 focus:bg-blue-50"
+        className="w-full px-4 py-2 text-gray-800 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-200 focus:bg-blue-50"
       />
 
       <input
@@ -70,7 +70,7 @@ export default function BorrowerForm({ onLoanCreated }: BorrowerFormProps) {
         onChange={(e) => setCreditScore(e.target.value)}
         placeholder="Credit Score"
         required
-        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-200 focus:bg-blue-50"
+        className="w-full px-4 py-2 border text-gray-800 placeholder-gray-500 border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-200 focus:bg-blue-50"
       />
 
       <input
@@ -79,12 +79,12 @@ export default function BorrowerForm({ onLoanCreated }: BorrowerFormProps) {
         onChange={(e) => setPurpose(e.target.value)}
         placeholder="Purpose"
         required
-        className="w-full px-4 py-5 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-200 focus:bg-blue-50"
+        className="w-full px-4 py-5 border text-gray-800 placeholder-gray-500 border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-200 focus:bg-blue-50"
       />
 
       <button
         type="submit"
-        className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-white hover:text-blue-500 ring hover:ring-blue-600 transition"
+        className="w-full py-2 px-4 bg-blue-400 text-white font-semibold rounded-md hover:bg-white hover:text-blue-500 ring hover:ring-blue-500 transition"
       >
         Submit Loan Request
       </button>

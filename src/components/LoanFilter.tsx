@@ -99,7 +99,7 @@ export default function LoanFilter({
             <div className="flex gap-2">
               <input
                 type="number"
-                className="flex-1 w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
+                className="flex-1 w-full px-3 py-2 text-gray-700 placeholder:text-gray-500 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
                 placeholder="Min"
                 value={amountMin || ""}
                 onChange={(e) =>
@@ -108,7 +108,7 @@ export default function LoanFilter({
               />
               <input
                 type="number"
-                className="flex-1 w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
+                className="flex-1 w-full px-3 py-2 text-gray-700 placeholder:text-gray-500 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
                 placeholder="Max"
                 value={amountMax || ""}
                 onChange={(e) =>
@@ -124,7 +124,7 @@ export default function LoanFilter({
               Sort by Popularity
             </label>
             <select
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
+              className="mt-1 block w-full px-3 py-2 text-gray-700 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
               value={interestSort}
               onChange={(e) =>
                 setInterestSort(e.target.value as "high-to-low" | "low-to-high")
@@ -146,7 +146,7 @@ export default function LoanFilter({
               Duration
             </label>
             <select
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
+              className="mt-1 block w-full px-3 py-2 text-gray-700 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
               value={duration || ""}
               onChange={(e) =>
                 setDuration(e.target.value ? parseInt(e.target.value) : null)
@@ -155,7 +155,9 @@ export default function LoanFilter({
               <option value="">All</option>
               <option value="6">6 months</option>
               <option value="12">12 months</option>
+              <option value="18">18 months</option>
               <option value="24">24 months</option>
+              <option value="30">30 months</option>
               <option value="36">36 months</option>
             </select>
           </div>
@@ -166,7 +168,7 @@ export default function LoanFilter({
               Credit Score Range
             </label>
             <select
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
+              className="mt-1 block w-full px-3 py-2 text-gray-700 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
               value={creditScoreRange}
               onChange={(e) =>
                 setCreditScoreRange(e.target.value as CreditScoreRange)
@@ -185,7 +187,7 @@ export default function LoanFilter({
               Your Interest Status
             </label>
             <select
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
+              className="mt-1 block w-full text-gray-700 px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
               value={interestStatus}
               onChange={(e) =>
                 setInterestStatus(e.target.value as InterestStatus)
