@@ -33,7 +33,7 @@ Set your Supabase keys in `.env.local`.
 
 ## 🔗 Live Demo
 
-👉 [peer-lending-app.vercel.app](https://quote-it-ten.vercel.app/)
+👉 [quote-it-app.vercel.app](https://quote-it-ten.vercel.app/)
 
 ---
 
