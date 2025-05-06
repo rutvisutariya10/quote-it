@@ -35,4 +35,19 @@ Set your Supabase keys in `.env.local`.
 
 👉 [quote-it-app.vercel.app](https://quote-it-ten.vercel.app/)
 
+## 🔧 Future Improvements
+
+### 🧩 Product Features
+- Add email or in-app notifications when a lender shows interest.
+- Support borrowers responding to lender interest (e.g., accept/reject).
+- Add filters for credit score or loan purpose to improve discovery.
+- Allow users to view their full loan and interest history in a dashboard.
+
+### ⚙️ Technical Enhancements
+- Apply Supabase Row Level Security (RLS) for tighter access control.
+- Add proper loading states and error handling for smoother UX.
+- Separate environment configs to cleanly handle dev and production setups.
+- Refactor filtering and state logic for maintainability (e.g., extract hooks or context where needed).
+- Add testing for core flows like loan creation and interest submission.
+
 
