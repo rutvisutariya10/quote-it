@@ -4,10 +4,10 @@ A minimal peer-to-peer lending platform where borrowers post loan requests and l
 
 ## 🚀 Stack
 
-- **Next.js (App Router)** – Full-stack React with modern routing.
-- **Tailwind CSS** – Utility-first styling for responsive, clean UI.
-- **Supabase** – Auth, Postgres database, and serverless functions.
-- **Vercel** – Fast deployments with CI/CD.
+- **Next.js (App Router)** – A solid choice for full-stack React applications with built-in routing and API support, keeping both client and server logic organized in one codebase.  
+- **Tailwind CSS** – Offers a utility-first approach to styling that ensures a clean, consistent UI without the need for custom CSS files.  
+- **Supabase** – Handles authentication, database, and serverless functions in one platform, making it easy to manage users and data without setting up a separate backend.  
+- **Vercel** – Provides a seamless deployment workflow and native support for Next.js, making updates and hosting straightforward.
 
 ## 🧠 How It Works
 
@@ -35,7 +35,4 @@ Set your Supabase keys in `.env.local`.
 
 👉 [quote-it-app.vercel.app](https://quote-it-ten.vercel.app/)
 
----
-
-Let me know if you'd like to add environment variable names or folder structure explanation.
 
