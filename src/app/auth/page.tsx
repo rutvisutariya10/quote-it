@@ -26,7 +26,7 @@ export default function AuthPage() {
       password,
     });
     if (error) {
-      alert(error.message);
+      alert("Please enter the credentials and then click Sign Up :)");
     } else {
       alert('Check your email for confirmation!');
     }
@@ -75,7 +75,7 @@ export default function AuthPage() {
         <div className="text-center mt-4">
           <button
             onClick={handleSignup}
-            className="text-[#173054] hover:text-blue-700 font-semibold"
+            className="text-[#173054] hover:text-blue-600 font-semibold"
           >
             Dont have an account? Sign Up
           </button>
