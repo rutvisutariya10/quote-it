@@ -1,6 +1,6 @@
 # Quote-It: A Borrower-Lender Web-App
 
-A minimal peer-to-peer lending platform where borrowers post loan requests and lenders express interest—with a little interactive flair.
+A minimal peer-to-peer lending platform where borrowers post loan requests and lenders express interest, with a little interactive flair.
 
 ## 🚀 Stack
 
