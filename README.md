@@ -38,16 +38,18 @@ Set your Supabase keys in `.env.local`.
 ## 🔧 Future Improvements
 
 ### 🧩 Product Features
-- Add email or in-app notifications when a lender shows interest.
-- Support borrowers responding to lender interest (e.g., accept/reject).
-- Add filters for credit score or loan purpose to improve discovery.
-- Allow users to view their full loan and interest history in a dashboard.
+### 🧩 Product Improvements
+- **Interest Notifications:** Notify borrowers (via email or in-app) when someone shows interest in their loan.
+- **Basic Status Updates:** Allow borrowers to mark loans as "Funded" or "Closed" to reduce clutter and confusion.
 
 ### ⚙️ Technical Enhancements
-- Apply Supabase Row Level Security (RLS) for tighter access control.
-- Add proper loading states and error handling for smoother UX.
-- Separate environment configs to cleanly handle dev and production setups.
-- Refactor filtering and state logic for maintainability (e.g., extract hooks or context where needed).
-- Add testing for core flows like loan creation and interest submission.
+- **Supabase RLS (Row Level Security):** Enforce strict per-user access to loans and interests, ensuring users can only access what they own.
+- **Centralized API Layer:** Move Supabase and filter logic into a dedicated `/lib/api` layer for easier testing, reuse, and future migration flexibility.
+- **State Abstraction with Custom Hooks:** Extract filtering, loan fetching, and auth logic into `useLoanData`, `useAuth`, etc. to simplify components and improve modularity.
+- **Form Validation with Zod or React Hook Form:** Add robust client-side validation to prevent invalid loan data or user input.
+- **Unified Error and Loading UI Components:** Avoid repetitive UX code by creating shared `Loader`, `ErrorBanner`, and `EmptyState` components.
+- **Environment Separation:** Use `.env.development`, `.env.production`, and Vercel’s environment system to avoid leaking secrets and misconfigurations.
+- **Testing Core Flows:** Add unit tests for loan creation, interest registration, and access control checks using Vitest or Jest.
+- **Analytics Integration:** Add basic tracking (e.g., Vercel Analytics or PostHog) to understand user behavior and drop-offs.
 
 
