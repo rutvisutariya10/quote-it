@@ -48,7 +48,7 @@ export default function FlipCard({ loan }: FlipCardProps) {
         </div>
 
         {/* Back */}
-        <div className="absolute inset-0 backface-hidden rotate-y-180 bg-gray-100 p-4 rounded-md shadow-sm overflow-y-auto">
+        <div className="absolute inset-0 text-gray-700 backface-hidden rotate-y-180 bg-gray-100 p-4 rounded-md shadow-sm overflow-y-auto">
           {emails && emails.length > 0 ? (
             <>
               <p className="font-semibold mb-2">
