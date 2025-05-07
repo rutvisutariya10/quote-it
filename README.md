@@ -36,8 +36,6 @@ Set your Supabase keys in `.env.local`.
 👉 [quote-it-app.vercel.app](https://quote-it-ten.vercel.app/)
 
 ## 🔧 Future Improvements
-
-### 🧩 Product Features
 ### 🧩 Product Improvements
 - **Interest Notifications:** Notify borrowers (via email or in-app) when someone shows interest in their loan.
 - **Basic Status Updates:** Allow borrowers to mark loans as "Funded" or "Closed" to reduce clutter and confusion.
